@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+/* Codex dark, reduced to pure grayscale. */
+:root {
+  --bg: #1b1b1b;
+  --sidebar: #252525;
+  --panel: #222222;
+  --raised: #2f2f2f;
+  --hover: #2c2c2c;
+  --selected: #363636;
+  --line: #2f2f2f;
+  --line-soft: #292929;
+  --fg: #ececec;
+  --soft: #d4d4d4;
+  --muted: #9b9b9b;
+  --faint: #6e6e6e;
+  /* Codex's few flat accents, used only where Codex uses them. */
+  --blue: #3f76ee;
+  --bubble: #1f3a70;
+  --bubble-fg: #dfe7fb;
+  --link: #7ea6ff;
+  --orange: #ec8a3f;
+  --green: #3fb950;
+  --red: #f85149;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-sidebar: var(--sidebar);
+  --color-panel: var(--panel);
+  --color-raised: var(--raised);
+  --color-hover: var(--hover);
+  --color-selected: var(--selected);
+  --color-line: var(--line);
+  --color-line-soft: var(--line-soft);
+  --color-fg: var(--fg);
+  --color-soft: var(--soft);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-blue: var(--blue);
+  --color-bubble: var(--bubble);
+  --color-bubble-fg: var(--bubble-fg);
+  --color-link: var(--link);
+  --color-orange: var(--orange);
+  --color-green: var(--green);
+  --color-red: var(--red);
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, "SF Pro Text", var(--font-inter),
+    "Segoe UI", system-ui, sans-serif;
+  --font-mono:
+    ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+html,
+body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "cv11";
+}
+
+::selection {
+  background: #4a4a4a;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #3a3a3a transparent;
+}
+
+.prose-chat p {
+  margin: 0 0 0.9em;
+  line-height: 1.75;
+}
+.prose-chat p:last-child {
+  margin-bottom: 0;
+}
+.prose-chat strong {
+  color: #fff;
+  font-weight: 600;
+}
+.prose-chat ul,
+.prose-chat ol {
+  margin: 0 0 0.9em;
+  padding-left: 1.25em;
+  line-height: 1.75;
+}
+.prose-chat ul {
+  list-style: disc;
+}
+.prose-chat ol {
+  list-style: decimal;
+}
+.prose-chat a {
+  color: var(--link);
+  text-decoration: none;
+}
+.prose-chat a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose-chat code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  background: var(--raised);
+  border-radius: 6px;
+  padding: 2px 6px;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    #7a7a7a 0%,
+    #7a7a7a 40%,
+    #e5e5e5 50%,
+    #7a7a7a 60%,
+    #7a7a7a 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 2.4s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
