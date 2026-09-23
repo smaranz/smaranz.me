@@ -67,6 +67,17 @@ export const experience = [
     ],
   },
   {
+    org: "FireHacks",
+    role: "Lead Organizer",
+    when: "Present",
+    href: "https://codestarters.xyz/firehacks",
+    status: "active" as const,
+    points: [
+      "Lead organizer of FireHacks, CodeStarters' free 24-hour hackathon for students of every skill level, beginners included.",
+      "Leads planning and cash sponsorship outreach for the event.",
+    ],
+  },
+  {
     org: "FBLA",
     role: "AI Development Co-Lead · Chapter officer",
     when: "2026–27",
@@ -95,7 +106,6 @@ export const experience = [
     status: "merged" as const,
     points: [
       "Won two hackathons so far.",
-      "Built ClipPilot in 24 hours at Fire Hacks with a four-person team.",
       "Collaborated on Wingman, an agent-to-agent negotiation protocol, on TrueForge.",
     ],
   },
@@ -291,10 +301,10 @@ export const projects: Project[] = [
     name: "ClipPilot",
     repo: "smaranz/clippilot",
     tagline: "An autonomous shorts factory with no human in the loop.",
-    role: "Team of 4 · Fire Hacks (24h)",
+    role: "Team of 4",
     summary: [
       "ClipPilot finds trending podcasts, clips the most viral moments into 9:16 shorts, posts them, measures performance, learns what wins, and repeats.",
-      "It was built in 24 hours at Fire Hacks by a four-person team, sponsored by OpenAI, Redis, CopilotKit, Upload-Post and OpenShorts. ClipPilot is the autonomy layer on top of OpenShorts: four independent lanes that talk only through a Redis contract.",
+      "It was built by a four-person team as the autonomy layer on top of OpenShorts: four independent lanes that talk only through a Redis contract.",
     ],
     highlights: [
       "Four lanes: discovery, performance learning, render engine, mission-control dashboard",
