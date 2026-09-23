@@ -57,12 +57,12 @@ function ContextPicker() {
         onClick={() => setOpen((o) => !o)}
         aria-haspopup="listbox"
         aria-expanded={open}
-        className="underline decoration-[#7a7a7a] decoration-dotted decoration-2 underline-offset-[7px] transition hover:decoration-fg"
+        className="group"
       >
         <AnimatePresence mode="wait" initial={false}>
           <motion.span
             key={current}
-            className="inline-block"
+            className="inline-block underline decoration-[#7a7a7a] decoration-dotted decoration-2 underline-offset-[7px] transition group-hover:decoration-fg"
             initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
             animate={{
               opacity: 1,

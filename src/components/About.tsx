@@ -4,6 +4,7 @@ import { ArrowUpRight, Check, Copy, FileCode2 } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import { profile, projects } from "@/content/profile";
+import { Contributions } from "./Contributions";
 import { LinkIcon } from "./LinkIcon";
 import { WorkedFor } from "./Messages";
 import { Item, Stagger } from "./motion";
@@ -203,6 +204,10 @@ export function AboutView() {
             </p>
           </div>
           <PhotoAttachment />
+        </Item>
+
+        <Item>
+          <Contributions />
         </Item>
 
         <Item>
