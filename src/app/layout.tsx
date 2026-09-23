@@ -17,10 +17,10 @@ export const metadata: Metadata = {
   alternates: {
     types: { "text/markdown": "/llms.txt" },
   },
+  twitter: { card: "summary_large_image" },
   openGraph: {
     title: "Smaran Aramballi Sandarsh",
     description: "Ask my agent anything about what I build.",
-    images: ["/posters/slates-v2.png"],
   },
 };
 
