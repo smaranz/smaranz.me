@@ -78,6 +78,16 @@ export const experience = [
     ],
   },
   {
+    org: "LovHack",
+    role: "Outreach Team",
+    when: "2026",
+    href: "https://lovhack.dev",
+    status: "active" as const,
+    points: [
+      "On the outreach team for LovHack, a 48-hour hackathon about shipping real web apps with modern tools and AI-assisted workflows.",
+    ],
+  },
+  {
     org: "FBLA",
     role: "AI Development Co-Lead · Chapter officer",
     when: "2026–27",
