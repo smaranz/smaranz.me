@@ -133,6 +133,28 @@ body {
   animation: shimmer 2.4s linear infinite;
 }
 
+/* The mark: on hover the box turns once and the cursor blinks, like Codex's logo. */
+.mark .mark-box {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.mark:hover .mark-box {
+  animation: mark-spin 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@keyframes mark-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.mark:hover .mark-cursor {
+  animation: cursor-blink 0.9s steps(1) infinite;
+}
+@keyframes cursor-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

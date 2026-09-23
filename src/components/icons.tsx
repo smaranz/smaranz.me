@@ -21,12 +21,12 @@ export function Mark({ className = "" }: { className?: string }) {
       strokeWidth="2.5"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className={className}
+      className={`mark ${className}`}
       aria-hidden
     >
-      <rect x="6" y="10" width="52" height="44" rx="14" />
+      <rect className="mark-box" x="6" y="10" width="52" height="44" rx="14" />
       <path d="M21 26l7 6-7 6" />
-      <path d="M33 39h10" />
+      <path className="mark-cursor" d="M33 39h10" />
     </svg>
   );
 }
