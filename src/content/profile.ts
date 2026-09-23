@@ -198,12 +198,30 @@ export const projects: Project[] = [
       },
     ],
     images: [
-      { src: "/slates/assignments.png", alt: "Slates board: Today, Tomorrow, Later and Turned in, with impact and time estimates on every card" },
-      { src: "/slates/grades.png", alt: "Slates grades: live category math for each class, with the change in points" },
-      { src: "/slates/tutor.png", alt: "Slates tutor with starter prompts built from your real assignments" },
-      { src: "/slates/calendar.png", alt: "Slates calendar with assignments on their real due dates" },
-      { src: "/slates/messages.png", alt: "Slates messages: the Schoology inbox, tagged by class" },
-      { src: "/slates/home.png", alt: "Slates home: choose School, Counselor, UI, or AI Usage" },
+      {
+        src: "/slates/assignments.png",
+        alt: "Slates board: Today, Tomorrow, Later and Turned in, with impact and time estimates on every card",
+      },
+      {
+        src: "/slates/grades.png",
+        alt: "Slates grades: live category math for each class, with the change in points",
+      },
+      {
+        src: "/slates/tutor.png",
+        alt: "Slates tutor with starter prompts built from your real assignments",
+      },
+      {
+        src: "/slates/calendar.png",
+        alt: "Slates calendar with assignments on their real due dates",
+      },
+      {
+        src: "/slates/messages.png",
+        alt: "Slates messages: the Schoology inbox, tagged by class",
+      },
+      {
+        src: "/slates/home.png",
+        alt: "Slates home: choose School, Counselor, UI, or AI Usage",
+      },
     ],
   },
   {
@@ -288,6 +306,7 @@ export const projects: Project[] = [
   {
     slug: "trendpilot",
     cover: "/posters/trendpilot.png",
+    logo: "/icons/trendpilot.png",
     name: "TrendPilot",
     repo: "smaranz/trendpilot",
     tagline: "An AI trend radar that turns rising signals into Shorts.",
@@ -399,6 +418,7 @@ export const projects: Project[] = [
   {
     slug: "omiclaw",
     cover: "/posters/omiclaw-v2.png",
+    logo: "/icons/omiclaw.png",
     name: "OmiClaw",
     repo: "smaranz/OmiClaw",
     tagline: "Driving Omi smart glasses from a Mac: say 'hey claw'.",
@@ -463,6 +483,7 @@ export const projects: Project[] = [
   {
     slug: "fbla-app",
     cover: "/posters/fbla-app-v2.png",
+    logo: "/icons/fbla-app.png",
     name: "FBLA Mobile App",
     repo: "smaranz/FBLA-Mobile-Application-Development-2026",
     tagline: "A native iOS app for FBLA member engagement.",

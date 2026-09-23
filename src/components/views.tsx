@@ -31,6 +31,7 @@ import { Composer } from "./Composer";
 import { Github, Mark } from "./icons";
 import { Card, Messages, UserBubble, WorkedFor, pill } from "./Messages";
 import { Item, Stagger, ease, pop } from "./motion";
+import { Avatar } from "./Sidebar";
 import { useStore } from "./store";
 
 function ContextPicker() {
@@ -109,9 +110,7 @@ function ContextPicker() {
                     className="size-5 rounded-[5px] object-cover"
                   />
                 ) : (
-                  <span className="grid size-5 place-items-center rounded-[5px] bg-raised text-[10px] text-muted">
-                    {o.name.slice(0, 1)}
-                  </span>
+                  <Avatar size={20} />
                 )}
                 {o.name}
                 {o.slug === context && (
