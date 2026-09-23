@@ -127,7 +127,7 @@ export const experience = [
     status: "merged" as const,
     points: [
       "Won two hackathons so far.",
-      "Collaborated on Wingman, an agent-to-agent negotiation protocol, on TrueForge.",
+      "Won with TrendPilot, an autonomous agent team that turns rising trends into YouTube Shorts.",
     ],
   },
   {
@@ -310,7 +310,7 @@ export const projects: Project[] = [
     name: "TrendPilot",
     repo: "smaranz/trendpilot",
     tagline: "An AI trend radar that turns rising signals into Shorts.",
-    role: "Creator",
+    role: "Creator · Hackathon winner",
     summary: [
       "TrendPilot is an autonomous team of agents for content creators. Scouts pull rising posts from Reddit, an analyst scores each signal, a strategist decides what's worth making, and a learner rewrites the team's context after every cycle so the next scan is sharper.",
       "Every agent gets its own isolated OpenClaw browser session and terminal, and they coordinate only through a shared group chat. The best signals go to a video swarm that writes, narrates with ElevenLabs, and renders YouTube Shorts with Remotion.",
