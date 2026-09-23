@@ -67,6 +67,17 @@ export const experience = [
     ],
   },
   {
+    org: "Publick",
+    role: "Co-founder",
+    when: "Present",
+    href: "https://www.publick.app/",
+    status: "active" as const,
+    points: [
+      "Co-founded Publick, an AI college counselor that turns a student's profile into a plan, a balanced school list, and a 90-day roadmap.",
+      "In early access with a waitlist.",
+    ],
+  },
+  {
     org: "FireHacks",
     role: "Lead Organizer",
     when: "August 2026",
@@ -230,7 +241,7 @@ export const projects: Project[] = [
     repo: "publick.app",
     tagline:
       "Honest answers, campus intel, and the people who already figured it out.",
-    role: "Creator · Early access",
+    role: "Co-founder · Early access",
     summary: [
       "Publick is an AI college counselor that pulls college planning into one place: a personalized plan built from your academics, activities, essays, and testing, a balanced list of likely, target, and reach schools, and a 90-day roadmap of what to do next.",
       "Its counselor answers questions with your profile as context, and an SAT simulator shows how a score change moves your options. It's in early access with a waitlist.",
