@@ -69,12 +69,12 @@ export const experience = [
   {
     org: "FireHacks",
     role: "Lead Organizer",
-    when: "Present",
+    when: "August 2026",
     href: "https://codestarters.xyz/firehacks",
-    status: "active" as const,
+    status: "merged" as const,
     points: [
-      "Lead organizer of FireHacks, CodeStarters' free 24-hour hackathon for students of every skill level, beginners included.",
-      "Leads planning and cash sponsorship outreach for the event.",
+      "Lead organizer of FireHacks, CodeStarters' free 24-hour hackathon for students of every skill level, held in August 2026.",
+      "Led planning and cash sponsorship outreach for the event.",
     ],
   },
   {
