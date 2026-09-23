@@ -3,6 +3,7 @@
 import { useChat } from "@ai-sdk/react";
 import {
   ArrowUpRight,
+  Check,
   ChevronDown,
   ChevronRight,
   CircleDashed,
@@ -46,9 +47,9 @@ function ContextPicker() {
     return () => document.removeEventListener("mousedown", onDown);
   }, [open]);
 
-  const options = [
+  const options: { slug: string | null; name: string; logo?: string }[] = [
     { slug: null, name: profile.short },
-    ...projects.map((p) => ({ slug: p.slug, name: p.name })),
+    ...projects.map((p) => ({ slug: p.slug, name: p.name, logo: p.logo })),
   ];
 
   return (
@@ -86,7 +87,7 @@ function ContextPicker() {
           <motion.div
             {...pop}
             role="listbox"
-            className="absolute top-full left-1/2 z-50 mt-3 w-56 -translate-x-1/2 origin-top rounded-xl border border-line bg-[#2a2a2a] p-1.5 text-left shadow-[0_16px_48px_rgba(0,0,0,0.5)]"
+            className="absolute top-full left-1/2 z-[60] mt-3 max-h-[min(340px,38vh)] w-60 -translate-x-1/2 origin-top overflow-y-auto overscroll-contain rounded-xl border border-line bg-[#2a2a2a] p-1.5 text-left shadow-[0_16px_48px_rgba(0,0,0,0.5)]"
           >
             {options.map((o) => (
               <button
@@ -97,9 +98,25 @@ function ContextPicker() {
                   setContext(o.slug);
                   setOpen(false);
                 }}
-                className={`block w-full rounded-lg px-3 py-2 text-[15px] tracking-normal hover:bg-hover ${o.slug === context ? "text-fg" : "text-soft"}`}
+                className={`flex w-full items-center gap-2.5 rounded-lg px-2.5 py-1.5 text-left text-[15px] tracking-normal hover:bg-hover ${o.slug === context ? "text-fg" : "text-soft"}`}
               >
+                {o.logo ? (
+                  <Image
+                    src={o.logo}
+                    alt=""
+                    width={20}
+                    height={20}
+                    className="size-5 rounded-[5px] object-cover"
+                  />
+                ) : (
+                  <span className="grid size-5 place-items-center rounded-[5px] bg-raised text-[10px] text-muted">
+                    {o.name.slice(0, 1)}
+                  </span>
+                )}
                 {o.name}
+                {o.slug === context && (
+                  <Check className="ml-auto size-4 text-fg" strokeWidth={2} />
+                )}
               </button>
             ))}
           </motion.div>
