@@ -47,7 +47,7 @@ export function agentMarkdown(full: boolean) {
       `- Stack: ${p.stack.join(", ")}`,
       ...p.links.map((l) => `- ${l.label}: ${link(l.href)}`),
     );
-    if (!full) lines.push(`- Details: ${siteUrl}/#/${p.slug}`);
+    lines.push(`- Details: ${siteUrl}/projects/${p.slug}`);
     lines.push("");
   }
 
@@ -63,10 +63,44 @@ export function agentMarkdown(full: boolean) {
     `- Short profile: ${siteUrl}/llms.txt`,
     `- Full profile: ${siteUrl}/llms-full.txt`,
     `- JSON: ${siteUrl}/api/profile`,
+    `- One project as markdown: ${siteUrl}/projects/<slug> (${projects.map((p) => p.slug).join(", ")})`,
+    `- Ask the site agent a question: GET ${siteUrl}/api/ask?q=<question> (plain text; add &format=json for JSON, &project=<slug> to focus on one project). POST {"q": "..."} also works. Rate limited.`,
+    `- Requesting ${siteUrl}/ with Accept: text/markdown returns the full profile.`,
     `- To contact Smaran, email ${profile.email}.`,
     "",
   );
   return lines.join("\n");
+}
+
+export function projectMarkdown(slug: string) {
+  const p = projects.find((x) => x.slug === slug);
+  if (!p) return undefined;
+  return [
+    `# ${p.name}`,
+    "",
+    `> ${p.tagline}`,
+    "",
+    `A project by ${profile.name} (${siteUrl}). Role: ${p.role}.`,
+    "",
+    ...p.summary.flatMap((s) => [s, ""]),
+    "## Highlights",
+    "",
+    ...p.highlights.map((h) => `- ${h}`),
+    "",
+    ...(p.next?.length
+      ? ["## Still being built", "", ...p.next.map((n) => `- ${n}`), ""]
+      : []),
+    "## Stack",
+    "",
+    p.stack.join(", "),
+    "",
+    "## Links",
+    "",
+    ...p.links.map((l) => `- ${l.label}: ${link(l.href)}`),
+    `- On the site: ${siteUrl}/#/${p.slug}`,
+    `- Ask about it: ${siteUrl}/api/ask?project=${p.slug}&q=<question>`,
+    "",
+  ].join("\n");
 }
 
 export function agentJson() {
@@ -91,7 +125,12 @@ export function agentJson() {
       stack: p.stack,
       links: p.links,
       url: `${siteUrl}/#/${p.slug}`,
+      markdown: `${siteUrl}/projects/${p.slug}`,
     })),
+    agentApi: {
+      ask: `${siteUrl}/api/ask?q=<question>`,
+      markdown: [`${siteUrl}/llms.txt`, `${siteUrl}/llms-full.txt`],
+    },
     stack: tools.map((t) => ({
       name: t.name,
       category: t.category,
@@ -134,6 +173,11 @@ export function personJsonLd() {
       name: p.name,
       description: p.tagline,
       url: p.links[0]?.href,
+      subjectOf: `${siteUrl}/projects/${p.slug}`,
     })),
+    subjectOf: [
+      { "@type": "WebPage", url: `${siteUrl}/llms-full.txt`, encodingFormat: "text/markdown" },
+      { "@type": "WebAPI", url: `${siteUrl}/api/ask`, description: "Ask Smaran's site agent a question: GET /api/ask?q=<question>" },
+    ],
   };
 }

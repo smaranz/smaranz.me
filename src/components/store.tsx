@@ -72,7 +72,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   const [context, setContext] = useState<string | null>(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [paletteOpen, setPaletteOpen] = useState(false);
-  const [model, setModel] = useState("gpt-6-sol");
+  const [model, setModel] = useState("gpt-6.2-sol");
   const [nav, setNav] = useState({ idx: 0, max: 0 });
   // Chats live outside React state so switching threads keeps streams and history intact.
   const [chats] = useState(() => new Map<string, Chat<UIMessage>>());

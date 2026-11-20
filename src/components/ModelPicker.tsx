@@ -9,29 +9,29 @@ import { useStore } from "./store";
 
 export const models = [
   {
-    id: "gpt-6-sol",
-    name: "GPT-6 Sol",
+    id: "gpt-6.2-sol",
+    name: "GPT-6.2 Sol",
     effort: "Medium",
     vendor: "OpenAI",
     Mark: OpenAIMark,
   },
   {
-    id: "gpt-6-astra",
-    name: "GPT-6 Astra",
+    id: "gpt-6.2-astra",
+    name: "GPT-6.2 Astra",
     effort: "High",
     vendor: "OpenAI",
     Mark: OpenAIMark,
   },
   {
-    id: "opus-5.5",
-    name: "Opus 5.5",
+    id: "opus-5.2",
+    name: "Opus 5.2",
     effort: "High",
     vendor: "Anthropic",
     Mark: AnthropicMark,
   },
   {
-    id: "fable-5.1",
-    name: "Fable 5.1",
+    id: "fable-5.2",
+    name: "Fable 5.2",
     effort: "Medium",
     vendor: "Anthropic",
     Mark: AnthropicMark,
